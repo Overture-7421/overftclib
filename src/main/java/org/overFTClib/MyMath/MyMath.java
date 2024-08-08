@@ -1,4 +1,4 @@
-package main.java.org.overFTClib.MyMath;
+package org.overFTClib.MyMath;
 
 public class MyMath {
     // Method to add two numbers

@@ -1,4 +1,4 @@
-package main.java.org.overFTClib.MyText;
+package org.overFTClib.MyText;
 
 public class MyText {
     public void printMessage() {
