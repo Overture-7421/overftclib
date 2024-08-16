@@ -9,10 +9,10 @@
  * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
  * */
 
-package org.overFTClib;
+package org.overture.ftc.overftclib;
 
 public interface OverGamepad {
-    boolean isButtonPressed(Button button);
+    //boolean isButtonPressed(Button button);
     double getLeftStickX();
     double getLeftStickY();
     double getRightStickX();
@@ -20,7 +20,7 @@ public interface OverGamepad {
     double getLeftTrigger();
     double getRightTrigger();
 
-    enum Button {
+    /*enum Button {
         A, B, X, Y, LEFT_BUMPER, RIGHT_BUMPER, BACK, START, LEFT_STICK_BUTTON, RIGHT_STICK_BUTTON
-    }
+    }*/
 }

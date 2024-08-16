@@ -9,18 +9,13 @@
  * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
  * */
 
-package org.overFTClib;
+package org.overture.ftc.overftclib;
 
-public interface OverLED {
-    void setColor(Color color);
-    void setPattern(Pattern pattern);
-    void turnOff();
-
-    enum Color {
-        RED, GREEN, BLUE, YELLOW, PURPLE, WHITE, ORANGE
-    }
-
-    enum Pattern {
-        SOLID, BLINKING, RAINBOW, PULSE
-    }
+public interface OverEncoder {
+    void reset();
+    int getCurrentPosition();
+    double getVelocity();
+    double getDistance();
+    boolean isAtTargetPosition(int targetPosition);
+    void setTargetPosition(int targetPosition);
 }

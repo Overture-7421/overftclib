@@ -9,9 +9,10 @@
  * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
  * */
 
-package org.overFTClib;
+package org.overture.ftc.overftclib;
 
-public interface OverGenericSensor {
-    double getValue();
-    String getName();
+public interface OverGyroSensor extends OverGenericSensor {
+    double getHeading();
+    double getAngularVelocity();
+    void reset();
 }

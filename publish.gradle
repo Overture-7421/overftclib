@@ -2,7 +2,7 @@ apply plugin: 'maven-publish'
 
 ext.licenseFile = files("$rootDir/LICENSE.txt")
 
-def pubVersion = '0.1'
+def pubVersion = '0.1.4'
 
 def outputsFolder = file("$buildDir/outputs")
 
@@ -42,10 +42,10 @@ ext.addTaskToCopyAllOutputs = { task ->
     copyAllOutputs.from task.archiveFile
 }
 
-def artifactGroupId = 'com.overFTCLib.ftc'
+def artifactGroupId = 'org.overture.ftc'
 def baseArtifactId = 'overFTCLib'
-def driverZipBaseName = "_GROUP_com_overFTCLib_ftc_ID_${baseArtifactId}-driver_CLS"
-def javaBaseName = "_GROUP_com_overFTCLib_ftc_ID_${baseArtifactId}-java_CLS"
+def driverZipBaseName = "_GROUP_org_overture_ftc_ID_${baseArtifactId}-driver_CLS"
+def javaBaseName = "_GROUP_org_overture_ftc_ID_${baseArtifactId}-java_CLS"
 
 
 

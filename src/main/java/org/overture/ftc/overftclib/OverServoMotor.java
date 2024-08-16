@@ -9,16 +9,16 @@
  * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
  * */
 
-package org.overFTClib;
+package org.overture.ftc.overftclib;
 
 public interface OverServoMotor {
     void setPosition(double position);
     double getPosition();
-    void setDirection(Direction direction);
-    Direction getDirection();
+    //void setDirection(Direction direction);
+    //Direction getDirection();
 
-    enum Direction {
+    /*enum Direction {
         FORWARD, REVERSE
-    }
+    }*/
 }
 

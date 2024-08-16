@@ -9,11 +9,11 @@
  * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
  * */
 
-package org.overFTClib;
+package org.overture.ftc.overftclib;
 public interface OverDistanceSensor extends OverGenericSensor {
-    double getDistance(DistanceUnit unit);
+    //double getDistance(DistanceUnit unit);
 
-    enum DistanceUnit {
+    /*enum DistanceUnit {
         CM, INCH, MM
-    }
+    }*/
 }

@@ -9,7 +9,7 @@
  * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
  * */
 
-package org.overFTClib;
+package org.overture.ftc.overftclib;
 
 public interface OverDcMotor extends OverEncoder {
     void setPower(double power);
@@ -18,12 +18,12 @@ public interface OverDcMotor extends OverEncoder {
     Direction getDirection();
     void setMode(RunMode mode);
 
-
     enum Direction {
         FORWARD, REVERSE
     }
-
     enum RunMode {
         RUN_WITHOUT_ENCODER, RUN_USING_ENCODER, RUN_TO_POSITION, STOP_AND_RESET_ENCODER
     }
+
 }
+

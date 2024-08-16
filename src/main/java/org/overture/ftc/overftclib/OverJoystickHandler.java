@@ -9,7 +9,7 @@
  * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
  * */
 
-package org.overFTClib;
+package org.overture.ftc.overftclib;
 
 import static java.lang.Math.abs;
 import static java.lang.Math.pow;

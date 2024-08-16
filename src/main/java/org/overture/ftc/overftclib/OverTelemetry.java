@@ -9,10 +9,10 @@
  * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
  * */
 
-package org.overFTClib;
+package org.overture.ftc.overftclib;
 
-public interface OverGyroSensor extends OverGenericSensor {
-    double getHeading();
-    double getAngularVelocity();
-    void reset();
+public interface OverTelemetry {
+    void addData(String caption, String value);
+    void update();
 }
+

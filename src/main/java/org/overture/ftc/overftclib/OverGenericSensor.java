@@ -9,10 +9,9 @@
  * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
  * */
 
-package org.overFTClib;
+package org.overture.ftc.overftclib;
 
-public interface OverDashboard {
-    void putMessage(String message);
-    String getMessage();
-    boolean isConnected();
+public interface OverGenericSensor {
+    double getValue();
+    String getName();
 }
