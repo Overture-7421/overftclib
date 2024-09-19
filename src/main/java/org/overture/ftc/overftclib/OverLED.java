@@ -16,11 +16,11 @@ public interface OverLED {
     //void setPattern(Pattern pattern);
     void turnOff();
 
-    /*enum Color {
+    enum Color {
         RED, GREEN, BLUE, YELLOW, PURPLE, WHITE, ORANGE
     }
 
     enum Pattern {
         SOLID, BLINKING, RAINBOW, PULSE
-    }*/
+    }
 }

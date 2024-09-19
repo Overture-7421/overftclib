@@ -9,6 +9,7 @@ allprojects {
         maven {
             url "https://frcmaven.wpi.edu/artifactory/release/"
         }
+
     }
 }
 dependencies {

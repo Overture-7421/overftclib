@@ -20,7 +20,7 @@ public interface OverGamepad {
     double getLeftTrigger();
     double getRightTrigger();
 
-    /*enum Button {
+    enum Button {
         A, B, X, Y, LEFT_BUMPER, RIGHT_BUMPER, BACK, START, LEFT_STICK_BUTTON, RIGHT_STICK_BUTTON
-    }*/
+    }
 }

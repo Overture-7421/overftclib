@@ -11,7 +11,7 @@
 
 package org.overture.ftc.overftclib;
 
-public interface OverDcMotor extends OverEncoder {
+public interface OverDcMotor {
     void setPower(double power);
     double getPower();
     void setDirection(Direction direction);
