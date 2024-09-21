@@ -1,5 +1,5 @@
 /*
- * OverFTCLib
+ * Overftclib
  * Written by: Santiago Quintana
  * Owned By: Overture Robotics Group.
  *
@@ -17,12 +17,21 @@ public interface OverDcMotor {
     void setDirection(Direction direction);
     Direction getDirection();
     void setMode(RunMode mode);
+    void setZeroPowerBehavior(zeroPowerBehavior behavior);
+    void setTargetPosition(int position);
+    int getTargetPosition();
+    int getCurrentPosition();
+
+
 
     enum Direction {
         FORWARD, REVERSE
     }
     enum RunMode {
         RUN_WITHOUT_ENCODER, RUN_USING_ENCODER, RUN_TO_POSITION, STOP_AND_RESET_ENCODER
+    }
+    enum zeroPowerBehavior {
+        UNKNOWN, BRAKE, FLOAT
     }
 
 }
