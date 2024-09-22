@@ -11,26 +11,24 @@
 
 package org.overture.ftc.overftclib;
 
-public interface OverDcMotor {
-    void setPower(double power);
-    double getPower();
-    void setDirection(Direction direction);
-    Direction getDirection();
-    void setMode(RunMode mode);
-    void setZeroPowerBehavior(zeroPowerBehavior behavior);
-    void setTargetPosition(int position);
-    int getTargetPosition();
-    int getCurrentPosition();
+public interface IOverDcMotor {
+    public void setPower(double power);
+    public double getPower();
+    public void setDirection(Direction direction);
+    public Direction getDirection();
+    public void setMode(RunMode mode);
+    public void setZeroPowerBehavior(ZeroPowerBehavior behavior);
+    public void setTargetPosition(int position);
+    public int getTargetPosition();
+    public int getCurrentPosition();
 
-
-
-    enum Direction {
+    public  enum Direction {
         FORWARD, REVERSE
     }
-    enum RunMode {
+    public  enum RunMode {
         RUN_WITHOUT_ENCODER, RUN_USING_ENCODER, RUN_TO_POSITION, STOP_AND_RESET_ENCODER
     }
-    enum zeroPowerBehavior {
+    public  enum ZeroPowerBehavior {
         UNKNOWN, BRAKE, FLOAT
     }
 
