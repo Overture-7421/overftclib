@@ -14,13 +14,13 @@ package org.overture.ftc.overftclib;
 public interface IOverDcMotor {
     public void setPower(double power);
     public double getPower();
-    public void setDirection(Direction direction);
     public Direction getDirection();
     public void setMode(RunMode mode);
-    public void setZeroPowerBehavior(ZeroPowerBehavior behavior);
+    public void setZeroPowerBehavior(ZeroPowerBehavior zeropowerbehavior);
     public void setTargetPosition(int position);
     public int getTargetPosition();
     public int getCurrentPosition();
+    public void setDirection(Direction direction);
 
     public  enum Direction {
         FORWARD, REVERSE

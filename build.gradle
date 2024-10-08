@@ -5,11 +5,16 @@ plugins {
     id 'edu.wpi.first.WpilibTools' version '1.3.0'
 }
 
-wpilibTools.deps.wpilibVersion = "2024.3.2"
+wpilibTools.deps.wpilibVersion = "2023.3.2"
 
 repositories {
     mavenCentral()
 }
+
+
+println(wpi.versions.jacksonVersion.get())
+println(wpi.versions.ejmlVersion.get())
+println(wpi.versions.quickbufVersion.get())
 
 dependencies {
     // -- FRC LIBRARIES -- //
@@ -17,13 +22,12 @@ dependencies {
     api wpilibTools.deps.wpilibJava("wpimath")
     api wpilibTools.deps.wpilibJava("wpinet")
     api wpilibTools.deps.wpilibJava("ntcore")
-    api wpilibTools.deps.wpilibJava("wpilibNewCommands")
 
-    api group: "com.fasterxml.jackson.core", name: "jackson-annotations", version: wpi.versions.jacksonVersion.get()
-    api group: "com.fasterxml.jackson.core", name: "jackson-core", version: wpi.versions.jacksonVersion.get()
-    api group: "com.fasterxml.jackson.core", name: "jackson-databind", version: wpi.versions.jacksonVersion.get()
+    api group: "com.fasterxml.jackson.core", name: "jackson-annotations", version: "2.18.0"
+    api group: "com.fasterxml.jackson.core", name: "jackson-core", version: "2.18.0"
+    api group: "com.fasterxml.jackson.core", name: "jackson-databind", version: "2.18.0"
 
-    api group: "org.ejml", name: "ejml-simple", version: wpi.versions.ejmlVersion.get()
+    api group: "org.ejml", name: "ejml-simple", version: "0.43.1"
     api group: "us.hebi.quickbuf", name: "quickbuf-runtime", version: wpi.versions.quickbufVersion.get();
 
 }
