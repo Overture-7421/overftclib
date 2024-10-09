@@ -46,7 +46,7 @@ jobs:
           yes | ~/android-sdk/cmdline-tools/cmdline-tools/bin/sdkmanager --licenses
 
       - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew
+        run: chmod +x gradlew
 
       - name: Fetch all history and metadata
         run: |
@@ -59,7 +59,7 @@ jobs:
         run: sed -i "s/0.0.0/${{ github.event.inputs.version }}/g" publish.gradle
 
       - name: Grant execute permission for gradlew spotless
-        run: chmod +x ./gradlew
+        run: chmod +x gradlew
 
       - name: Ensure spotless is applied
         run: ./gradlew spotlessApply
@@ -72,6 +72,8 @@ jobs:
         with:
           name: ${{ matrix.artifact-name }}
           path: build/allOutputs
+
+
 
   build-host:
     strategy:
@@ -93,13 +95,8 @@ jobs:
         with:
           submodules: true
 
-      - name: Grant execute permission for gradlew (macOS)
-        if: runner.os == 'macOS'
-        run: chmod +x ./gradlew
-
       - name: Fetch all history and metadata
         run: git fetch --prune --unshallow
-
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
@@ -212,4 +209,23 @@ jobs:
         run: zip -r overftclib-${{ github.event.inputs.version }}.zip maven/development/org/overture/ftc/overftclib
 
       - name: Create Release
-        if: github.event.inputs.prerelease == 'false
+        if: github.event.inputs.prerelease == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          name: overftclib ${{ github.event.inputs.version }}
+          files: overftclib-${{ github.event.inputs.version }}.zip
+          tag_name: ${{ github.event.inputs.version }}
+          generate_release_notes: true
+          prerelease: false
+          make_latest: true
+
+      - name: Create Pre-Release
+        if: github.event.inputs.prerelease == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          name: overftclib ${{ github.event.inputs.version }}
+          files: overftclib-${{ github.event.inputs.version }}.zip
+          tag_name: ${{ github.event.inputs.version }}
+          generate_release_notes: true
+          prerelease: true
+          make_latest: false
