@@ -175,6 +175,9 @@ jobs:
           name: overftclib-${{ github.event.inputs.version }}
           path: ~/releases/
 
+      - name: Ensure the target directory exists
+        run: mkdir -p overture-7421.github.io/overftclib/repo/
+
       - name: Copy artifacts
         run: cp -r ~/releases/maven/development/org overture.github.io/overftclib/repo/
 
