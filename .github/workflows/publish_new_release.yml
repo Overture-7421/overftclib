@@ -45,9 +45,6 @@ jobs:
           echo "export PATH=$ANDROID_HOME/cmdline-tools/bin:$PATH" >> $GITHUB_ENV
           yes | ~/android-sdk/cmdline-tools/cmdline-tools/bin/sdkmanager --licenses
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
       - name: Fetch all history and metadata
         run: |
           git config --global --add safe.directory /__w/${{ github.event.repository.name }}/${{ github.event.repository.name }}
@@ -112,6 +109,9 @@ jobs:
         if: ${{ matrix.os-name == 'macos' }}
         run: sed -i '' "s/0.0.0/${{ github.event.inputs.version }}/g" publish.gradle
         working-directory: ./
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
 
       - name: Ensure spotless is applied
         run: ./gradlew spotlessApply
