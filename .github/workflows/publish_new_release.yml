@@ -183,20 +183,20 @@ jobs:
 
       - name: Update json
         run: |
-          sed -i 's/"version"\: \"[0-9]*\.[0-9]*\.[0-9]*\"/"version": "${{ github.event.inputs.version }}"/g' overftclib.github.io/overftclib/overftclib.json  
+          sed -i 's/"version"\: \"[0-9]*\.[0-9]*\.[0-9]*\"/"version": "${{ github.event.inputs.version }}"/g' overture-7421.github.io/overftclib/overftclib.json  
 
       - name: Commit
         run: |
-          cd overftclib.github.io
+          cd overture-7421.github.io
           git add .
           git commit -m "Upgrade to ${{ github.event.inputs.version }}"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          repository: overftclib/overftclib.github.io
+          repository: overftclib/overture-7421.github.io
           github_token: ${{ secrets.ACCESS_TOKEN }}
-          directory: overftclib.github.io
+          directory: overture-7421.github.io
 
   publish-release:
     name: Publish Release
