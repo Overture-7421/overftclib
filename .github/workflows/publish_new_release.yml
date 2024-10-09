@@ -152,7 +152,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: OvertureLib-${{ github.event.inputs.version }}
+          name: overftclib-${{ github.event.inputs.version }}
           path: ~/releases/
 
   upload:
