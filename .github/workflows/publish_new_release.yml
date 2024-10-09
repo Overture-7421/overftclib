@@ -53,7 +53,7 @@ jobs:
         run: echo "sdk.dir=$HOME/android-sdk" > local.properties
 
       - name: Set version
-        run: sed -i "s/0.0.0/${{ github.event.inputs.version }}/g" publish.gradle
+        run: sed -i "s/0.0.1/${{ github.event.inputs.version }}/g" publish.gradle
 
       - name: Grant execute permission for gradlew spotless
         run: chmod +x gradlew
@@ -102,12 +102,12 @@ jobs:
 
       - name: Set version
         if: ${{ matrix.os-name != 'macos' }}
-        run: sed -i "s/0.0.0/${{ github.event.inputs.version }}/g" publish.gradle
+        run: sed -i "s/0.0.1/${{ github.event.inputs.version }}/g" publish.gradle
         working-directory: ./
 
       - name: Set version (mac)
         if: ${{ matrix.os-name == 'macos' }}
-        run: sed -i '' "s/0.0.0/${{ github.event.inputs.version }}/g" publish.gradle
+        run: sed -i '' "s/0.0.1/${{ github.event.inputs.version }}/g" publish.gradle
         working-directory: ./
 
       - name: Grant execute permission for gradlew
