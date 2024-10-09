@@ -58,6 +58,9 @@ jobs:
       - name: Set version
         run: sed -i "s/0.0.0/${{ github.event.inputs.version }}/g" publish.gradle
 
+      - name: Grant execute permission for gradlew spotless
+        run: chmod +x gradlew
+
       - name: Ensure spotless is applied
         run: ./gradlew spotlessApply
 
