@@ -159,7 +159,7 @@ jobs:
     steps:
       - name: Clone Pages
         run: |
-          git clone https://github.com/SantiQ0905/overftclibrc.github.io.git
+          git clone https://github.com/SantiQ0905/overftclib.github.io.git
 
       - name : Set up git
         run: |
@@ -169,28 +169,28 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: overftclibrc-${{ github.event.inputs.version }}
+          name: overftclib-${{ github.event.inputs.version }}
           path: ~/releases/
 
       - name: Copy artifacts
-        run: cp -r ~/releases/maven/development/org overture.github.io/overftclibrc/repo/
+        run: cp -r ~/releases/maven/development/org overture.github.io/overftclib/repo/
 
       - name: Update json
         run: |
-          sed -i 's/"version"\: \"[0-9]*\.[0-9]*\.[0-9]*\"/"version": "${{ github.event.inputs.version }}"/g' overftclibrc.github.io/overftclibrc/overftclibrc.json  
+          sed -i 's/"version"\: \"[0-9]*\.[0-9]*\.[0-9]*\"/"version": "${{ github.event.inputs.version }}"/g' overftclib.github.io/overftclib/overftclib.json  
 
       - name: Commit
         run: |
-          cd overftclibrc.github.io
+          cd overftclib.github.io
           git add .
           git commit -m "Upgrade to ${{ github.event.inputs.version }}"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          repository: overftclibrc/overftclibrc.github.io
+          repository: overftclib/overftclib.github.io
           github_token: ${{ secrets.ACCESS_TOKEN }}
-          directory: overftclibrc.github.io
+          directory: overftclib.github.io
 
   publish-release:
     name: Publish Release
@@ -200,17 +200,17 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          name: overftclibrc-${{ github.event.inputs.version }}
+          name: overftclib-${{ github.event.inputs.version }}
 
       - name: Zip artifacts
-        run: zip -r overftclibrc-${{ github.event.inputs.version }}.zip maven/development/org/overture/ftc/overftclibrc
+        run: zip -r overftclib-${{ github.event.inputs.version }}.zip maven/development/org/overture/ftc/overftclib
 
       - name: Create Release
         if: github.event.inputs.prerelease == 'false'
         uses: softprops/action-gh-release@v2
         with:
-          name: overftclibrc ${{ github.event.inputs.version }}
-          files: overftclibrc-${{ github.event.inputs.version }}.zip
+          name: overftclib ${{ github.event.inputs.version }}
+          files: overftclib-${{ github.event.inputs.version }}.zip
           tag_name: ${{ github.event.inputs.version }}
           generate_release_notes: true
           prerelease: false
@@ -220,8 +220,8 @@ jobs:
         if: github.event.inputs.prerelease == 'true'
         uses: softprops/action-gh-release@v2
         with:
-          name: overftclibrc ${{ github.event.inputs.version }}
-          files: overftclibrc-${{ github.event.inputs.version }}.zip
+          name: overftclib ${{ github.event.inputs.version }}
+          files: overftclib-${{ github.event.inputs.version }}.zip
           tag_name: ${{ github.event.inputs.version }}
           generate_release_notes: true
           prerelease: true
