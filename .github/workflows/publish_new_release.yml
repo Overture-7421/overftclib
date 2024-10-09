@@ -175,9 +175,6 @@ jobs:
           name: overftclib-${{ github.event.inputs.version }}
           path: ~/releases/
 
-      - name: Copy artifacts
-        run: cp -r ~/releases/maven/development/org overture.github.io/overftclib/repo/
-
       - name: Update json
         run: |
           sed -i 's/"version"\: \"[0-9]*\.[0-9]*\.[0-9]*\"/"version": "${{ github.event.inputs.version }}"/g' overftclib.github.io/overftclib/overftclib.json  
