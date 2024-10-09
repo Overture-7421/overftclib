@@ -162,7 +162,7 @@ jobs:
     steps:
       - name: Clone Pages
         run: |
-          git clone https://github.com/SantiQ0905/overftclib.github.io.git
+          git clone https://github.com/Overture-7421/overture-7421.github.io.git
 
       - name : Set up git
         run: |
