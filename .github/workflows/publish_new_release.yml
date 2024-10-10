@@ -181,9 +181,15 @@ jobs:
       - name: Copy artifacts
         run: cp -r ~/releases/maven/development/org overture-7421.github.io/overftclib/repo/
 
-      - name: Update json
+      - name: Check if overftclib.json exists
         run: |
-          sed -i 's/"version"\: \"[0-9]*\.[0-9]*\.[0-9]*\"/"version": "${{ github.event.inputs.version }}"/g' overture-7421.github.io/overftclib/overftclib.json  
+          if [ ! -f overture-7421.github.io/overftclib/overftclib.json ]; then
+            echo '{ "version": "0.0.0" }' > overture-7421.github.io/overftclib/overftclib.json
+          fi
+
+      - name: Update version in JSON file
+        run: |
+          sed -i 's/"version": "[0-9]*\.[0-9]*\.[0-9]*"/"version": "${{ github.event.inputs.version }}"/g' overture-7421.github.io/overftclib/overftclib.json
 
       - name: Commit
         run: |
