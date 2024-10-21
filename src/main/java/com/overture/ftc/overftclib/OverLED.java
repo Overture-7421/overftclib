@@ -9,10 +9,18 @@
  * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
  * */
 
-package org.overture.ftc.overftclib;
+package com.overture.ftc.overftclib;
 
-public interface OverTelemetry {
-    void addData(String caption, String value);
-    void update();
+public interface OverLED {
+    //void setColor(Color color);
+    //void setPattern(Pattern pattern);
+    void turnOff();
+
+    enum Color {
+        RED, GREEN, BLUE, YELLOW, PURPLE, WHITE, ORANGE
+    }
+
+    enum Pattern {
+        SOLID, BLINKING, RAINBOW, PULSE
+    }
 }
-

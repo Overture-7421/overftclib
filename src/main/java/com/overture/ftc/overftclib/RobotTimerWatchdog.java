@@ -1,4 +1,4 @@
-package org.overture.ftc.overftclib;
+package com.overture.ftc.overftclib;
 
 import java.awt.*;
 

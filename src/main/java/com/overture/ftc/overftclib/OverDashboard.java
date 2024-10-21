@@ -9,11 +9,10 @@
  * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
  * */
 
-package org.overture.ftc.overftclib;
-public interface OverDistanceSensor extends OverGenericSensor {
-    double getDistance(DistanceUnit unit);
+package com.overture.ftc.overftclib;
 
-    enum DistanceUnit {
-        CM, INCH, MM
-    }
+public interface OverDashboard {
+    void putMessage(String message);
+    String getMessage();
+    boolean isConnected();
 }

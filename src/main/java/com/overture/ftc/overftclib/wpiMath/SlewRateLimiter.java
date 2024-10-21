@@ -1,4 +1,4 @@
-package org.overture.ftc.overftclib.wpiMath;
+package com.overture.ftc.overftclib.wpiMath;
 
 import edu.wpi.first.math.MathUtil;
 

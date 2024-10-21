@@ -9,7 +9,7 @@
 * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
 * */
 
-package org.overture.ftc.overftclib;
+package com.overture.ftc.overftclib;
 
 public interface OverLocalization {
     Position getPosition();

@@ -9,10 +9,16 @@
  * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
  * */
 
-package org.overture.ftc.overftclib;
+package com.overture.ftc.overftclib;
 
-public interface OverGyroSensor extends OverGenericSensor {
-    double getHeading();
-    double getAngularVelocity();
-    void reset();
+public interface OverServoMotor {
+    void setPosition(double position);
+    double getPosition();
+    void setDirection(Direction direction);
+    Direction getDirection();
+
+    enum Direction {
+        FORWARD, REVERSE
+    }
 }
+
