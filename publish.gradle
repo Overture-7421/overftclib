@@ -44,8 +44,8 @@ ext.addTaskToCopyAllOutputs = { task ->
 
 def artifactGroupId = 'com.overture.ftc'
 def baseArtifactId = 'overftclib'
-def driverZipBaseName = "_GROUP_org_overture_ftc_ID_${baseArtifactId}-driver_CLS"
-def javaBaseName = "_GROUP_org_overture_ftc_ID_${baseArtifactId}_CLS"
+def driverZipBaseName = "_GROUP_com_overture_ftc_ID_${baseArtifactId}-driver_CLS"
+def javaBaseName = "_GROUP_com_overture_ftc_ID_${baseArtifactId}_CLS"
 
 
 
