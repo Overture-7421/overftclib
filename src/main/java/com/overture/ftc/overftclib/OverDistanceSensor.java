@@ -10,6 +10,7 @@
  * */
 
 package com.overture.ftc.overftclib;
+
 public interface OverDistanceSensor extends OverGenericSensor {
     double getDistance(DistanceUnit unit);
 
