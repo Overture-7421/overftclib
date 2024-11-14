@@ -9,7 +9,7 @@
  * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
  * */
 
-package com.overture.ftc.overftclib.devices;
+package com.overture.ftc.overftclib.Devices;
 
 public interface OverLED {
     //void setColor(Color color);

@@ -49,6 +49,11 @@ public class TrapezoidProfile {
     private double m_endFullSpeed;
     private double m_endDeccel;
 
+    public TrapezoidProfile(Constraints mConstraints, boolean mNewAPI) {
+        m_constraints = mConstraints;
+        m_newAPI = mNewAPI;
+    }
+
     /** Profile constraints. */
     public static class Constraints {
         /** Maximum velocity. */
@@ -113,7 +118,7 @@ public class TrapezoidProfile {
      *
      * @param constraints The constraints on the profile, like maximum velocity.
      */
-    public FRCTrapezoidProfile(Constraints constraints) {
+    public TrapezoidProfile(Constraints constraints) {
         m_constraints = constraints;
         m_newAPI = true;
     }
@@ -127,7 +132,7 @@ public class TrapezoidProfile {
      * @deprecated Pass the desired and current state into calculate instead of constructing a new
      *     TrapezoidProfile with the desired and current state
      */
-    public FRCTrapezoidProfile(Constraints constraints, State goal, State initial) {
+    public TrapezoidProfile(Constraints constraints, State goal, State initial) {
         m_direction = shouldFlipAcceleration(initial, goal) ? -1 : 1;
         m_constraints = constraints;
         m_current = direct(initial);
@@ -175,7 +180,7 @@ public class TrapezoidProfile {
      * @deprecated Pass the desired and current state into calculate instead of constructing a new
      *     TrapezoidProfile with the desired and current state
      */
-    public FRCTrapezoidProfile(Constraints constraints, State goal) {
+    public TrapezoidProfile(Constraints constraints, State goal) {
         this(constraints, goal, new State(0, 0));
     }
 

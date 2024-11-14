@@ -9,16 +9,12 @@
  * All rights reserved 2024. (R) OVERTURE ROBOTICS GROUP
  * */
 
-package com.overture.ftc.overftclib.devices;
+package com.overture.ftc.overftclib.Devices;
 
-public interface OverServoMotor {
-    void setPosition(double position);
-    double getPosition();
-    void setDirection(Direction direction);
-    Direction getDirection();
+public interface OverDistanceSensor extends OverGenericSensor {
+    double getDistance(DistanceUnit unit);
 
-    enum Direction {
-        FORWARD, REVERSE
+    enum DistanceUnit {
+        CM, INCH, MM
     }
 }
-
