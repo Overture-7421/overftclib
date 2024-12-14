@@ -12,8 +12,8 @@
 package com.overture.ftc.overftclib.Devices;
 
 public interface OverLED {
-    //void setColor(Color color);
-    //void setPattern(Pattern pattern);
+    void setColor(Color color);
+    void setPattern(Pattern pattern);
     void turnOff();
 
     enum Color {

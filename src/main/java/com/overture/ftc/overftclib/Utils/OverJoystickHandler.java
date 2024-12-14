@@ -14,28 +14,17 @@ package com.overture.ftc.overftclib.Utils;
 import static java.lang.Math.abs;
 import static java.lang.Math.pow;
 
+
 public class OverJoystickHandler {
-
-    private static final double DEADZONE = 0.15;
-    private static final double EXPONENTIAL_GAIN = 0.15;
-
-    private OverJoystickHandler() {
-        throw new UnsupportedOperationException("Static class should not be instantiated.");
-    }
+    private static final double DEADZONE = 0.15;  // Set your deadzone threshold
+    private static final double EXPONENTIAL_GAIN = 0.15;  // Set your exponential gain
 
     public static double handleJoystickInput(double axisValue) {
-        // Placeholder for the actual logic, returning 0 as before
-        return 0;
-    }
-
-    protected static double applyDeadzoneAndExponentialGain(double axisValue) {
         double axisMag = abs(axisValue);
         if (axisMag < DEADZONE) return 0.0;
 
-        double res = EXPONENTIAL_GAIN * pow(
-                (axisMag - DEADZONE) / (1 - DEADZONE), 3) +
-                (1 - EXPONENTIAL_GAIN) * (axisMag - DEADZONE) / (1 - DEADZONE);
-
-        return Math.copySign(res, axisValue);
+        double res = EXPONENTIAL_GAIN * pow
+                (( axisMag - DEADZONE) / (1-DEADZONE), 3) + (1 - EXPONENTIAL_GAIN) * (axisMag - DEADZONE) / (1 - DEADZONE);
+        return  Math.copySign(res, axisValue);
     }
 }
